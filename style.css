@@ -1,0 +1,205 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #ffffff;
+    color: #333333;
+    overflow-x: hidden;
+}
+
+img {
+    width: 100%;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.navbar {
+    padding: 20px 50px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: #333;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.hero-section {
+    margin-top: 100px;
+    min-height: 85vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+.page-title {
+    font-size: 3.5rem;
+    margin-bottom: 80px;
+    text-align: center;
+    color: #222;
+    font-weight: 700;
+    letter-spacing: -1.5px;
+}
+
+.podium-container {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 80px;
+    margin-bottom: 60px;
+}
+
+.podium-item {
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    width: 240px;
+}
+
+.podium-item:hover {
+    transform: translateY(-20px) scale(1.02);
+}
+
+.anime-card {
+    background-color: #ffffff;
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 2;
+}
+
+.anime-card img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.anime-info {
+    padding: 20px;
+    text-align: center;
+    background-color: #fff;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: 1px solid rgba(0,0,0,0.05);
+}
+
+.anime-info h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.5;
+    color: #333;
+    display: block;
+}
+
+.crown {
+    position: absolute;
+    top: -55px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.8rem;
+    font-weight: 800;
+    padding: 8px 20px;
+    border-radius: 50px;
+    background-color: #fff;
+    z-index: 5;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* --- RANK 1: GOLD (EMAS) --- */
+.rank-1 {
+    width: 300px;
+    z-index: 10;
+    order: 2;
+}
+
+.rank-1 .anime-card {
+    border: 2px solid rgba(255, 215, 0, 0.3);
+    box-shadow: 0 10px 40px rgba(255, 215, 0, 0.25);
+}
+
+.rank-1:hover .anime-card {
+    box-shadow: 0 20px 60px rgba(255, 215, 0, 0.6);
+    border-color: rgba(255, 215, 0, 1);
+}
+
+.rank-1 .crown {
+    font-size: 2.5rem;
+    color: #FFD700;
+    top: -70px;
+    text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+}
+
+/* --- RANK 2: SILVER (PERAK) --- */
+.rank-2 {
+    order: 1;
+}
+
+.rank-2 .anime-card {
+    border: 2px solid rgba(192, 192, 192, 0.3);
+    box-shadow: 0 10px 30px rgba(160, 160, 160, 0.2);
+}
+
+.rank-2:hover .anime-card {
+    box-shadow: 0 15px 40px rgba(160, 160, 160, 0.5);
+    border-color: rgba(192, 192, 192, 1);
+}
+
+.rank-2 .crown {
+    color: #A0A0A0;
+}
+
+/* --- RANK 3: BRONZE (PERUNGGU) --- */
+.rank-3 {
+    order: 3;
+}
+
+.rank-3 .anime-card {
+    border: 2px solid rgba(205, 127, 50, 0.3);
+    box-shadow: 0 10px 30px rgba(205, 127, 50, 0.2);
+}
+
+.rank-3:hover .anime-card {
+    box-shadow: 0 15px 40px rgba(205, 127, 50, 0.5);
+    border-color: rgba(205, 127, 50, 1);
+}
+
+.rank-3 .crown {
+    color: #CD7F32;
+}
+
+.list-section {
+    padding: 80px 50px;
+    background-color: #f8f9fa;
+}
+
+.list-section h2 {
+    margin-bottom: 50px;
+    font-size: 2rem;
+    color: #333;
+    text-align: center;
+    font-weight: 600;
+}
