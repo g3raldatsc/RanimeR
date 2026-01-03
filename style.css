@@ -129,7 +129,6 @@ a {
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
-/* --- RANK 1: GOLD (EMAS) --- */
 .rank-1 {
     width: 300px;
     z-index: 10;
@@ -153,7 +152,6 @@ a {
     text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
 }
 
-/* --- RANK 2: SILVER (PERAK) --- */
 .rank-2 {
     order: 1;
 }
@@ -172,7 +170,6 @@ a {
     color: #A0A0A0;
 }
 
-/* --- RANK 3: BRONZE (PERUNGGU) --- */
 .rank-3 {
     order: 3;
 }
@@ -191,9 +188,11 @@ a {
     color: #CD7F32;
 }
 
+
 .list-section {
-    padding: 80px 50px;
+    padding: 40px 10%;
     background-color: #f8f9fa;
+    border-top: 1px solid #eee;
 }
 
 .list-section h2 {
@@ -201,5 +200,112 @@ a {
     font-size: 2rem;
     color: #333;
     text-align: center;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 30px;
+}
+
+.grid-item {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    border: 1px solid #eee;
+    display: flex;
+    flex-direction: column;
+}
+
+.grid-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    border-color: #ddd;
+}
+
+.grid-item img {
+    width: 100%;
+    height: 280px; 
+    object-fit: cover; 
+}
+
+.grid-info {
+    padding: 15px;
+    text-align: center;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.grid-info h3 {
+    font-size: 0.9rem;
+    color: #444;
     font-weight: 600;
+    margin: 0;
+    line-height: 1.4;
+}
+
+.rank-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: rgba(30, 30, 30, 0.85);
+    color: white;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    backdrop-filter: blur(4px);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1000; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.8); 
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto; 
+    padding: 20px;
+    border-radius: 12px;
+    width: 90%; 
+    max-width: 600px;
+    position: relative;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    z-index: 10;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
 }
