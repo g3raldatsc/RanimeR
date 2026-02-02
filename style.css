@@ -21,6 +21,7 @@ a {
     color: inherit;
 }
 
+/* --- NAVBAR --- */
 .navbar {
     padding: 20px 50px;
     background-color: #ffffff;
@@ -41,6 +42,7 @@ a {
     text-transform: uppercase;
 }
 
+/* --- HERO SECTION --- */
 .hero-section {
     margin-top: 100px;
     min-height: 85vh;
@@ -129,66 +131,23 @@ a {
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
-.rank-1 {
-    width: 300px;
-    z-index: 10;
-    order: 2;
-}
+/* Rank Glow Effects */
+.rank-1 { width: 300px; z-index: 10; order: 2; }
+.rank-1 .anime-card { border: 2px solid rgba(255, 215, 0, 0.3); box-shadow: 0 10px 40px rgba(255, 215, 0, 0.25); }
+.rank-1:hover .anime-card { box-shadow: 0 20px 60px rgba(255, 215, 0, 0.6); border-color: rgba(255, 215, 0, 1); }
+.rank-1 .crown { font-size: 2.5rem; color: #FFD700; top: -70px; text-shadow: 0 0 20px rgba(255, 215, 0, 0.5); }
 
-.rank-1 .anime-card {
-    border: 2px solid rgba(255, 215, 0, 0.3);
-    box-shadow: 0 10px 40px rgba(255, 215, 0, 0.25);
-}
+.rank-2 { order: 1; }
+.rank-2 .anime-card { border: 2px solid rgba(192, 192, 192, 0.3); box-shadow: 0 10px 30px rgba(160, 160, 160, 0.2); }
+.rank-2:hover .anime-card { box-shadow: 0 15px 40px rgba(160, 160, 160, 0.5); border-color: rgba(192, 192, 192, 1); }
+.rank-2 .crown { color: #A0A0A0; }
 
-.rank-1:hover .anime-card {
-    box-shadow: 0 20px 60px rgba(255, 215, 0, 0.6);
-    border-color: rgba(255, 215, 0, 1);
-}
+.rank-3 { order: 3; }
+.rank-3 .anime-card { border: 2px solid rgba(205, 127, 50, 0.3); box-shadow: 0 10px 30px rgba(205, 127, 50, 0.2); }
+.rank-3:hover .anime-card { box-shadow: 0 15px 40px rgba(205, 127, 50, 0.5); border-color: rgba(205, 127, 50, 1); }
+.rank-3 .crown { color: #CD7F32; }
 
-.rank-1 .crown {
-    font-size: 2.5rem;
-    color: #FFD700;
-    top: -70px;
-    text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
-}
-
-.rank-2 {
-    order: 1;
-}
-
-.rank-2 .anime-card {
-    border: 2px solid rgba(192, 192, 192, 0.3);
-    box-shadow: 0 10px 30px rgba(160, 160, 160, 0.2);
-}
-
-.rank-2:hover .anime-card {
-    box-shadow: 0 15px 40px rgba(160, 160, 160, 0.5);
-    border-color: rgba(192, 192, 192, 1);
-}
-
-.rank-2 .crown {
-    color: #A0A0A0;
-}
-
-.rank-3 {
-    order: 3;
-}
-
-.rank-3 .anime-card {
-    border: 2px solid rgba(205, 127, 50, 0.3);
-    box-shadow: 0 10px 30px rgba(205, 127, 50, 0.2);
-}
-
-.rank-3:hover .anime-card {
-    box-shadow: 0 15px 40px rgba(205, 127, 50, 0.5);
-    border-color: rgba(205, 127, 50, 1);
-}
-
-.rank-3 .crown {
-    color: #CD7F32;
-}
-
-
+/* --- GRID SECTION --- */
 .list-section {
     padding: 40px 10%;
     background-color: #f8f9fa;
@@ -267,6 +226,10 @@ a {
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
+/* ========================================= */
+/* MODAL FULLSCREEN (BARU)             */
+/* ========================================= */
+
 .modal {
     display: none; 
     position: fixed; 
@@ -275,37 +238,203 @@ a {
     top: 0;
     width: 100%; 
     height: 100%; 
-    overflow: auto; 
-    background-color: rgba(0,0,0,0.8); 
-    backdrop-filter: blur(5px);
+    overflow: hidden; /* Mencegah scroll di body utama */
+    background-color: rgba(0,0,0,0.85); 
+    backdrop-filter: blur(8px);
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
 }
 
-.modal-content {
+.modal-content.fullscreen-modal {
     background-color: #fefefe;
-    margin: 5% auto; 
-    padding: 20px;
-    border-radius: 12px;
-    width: 90%; 
-    max-width: 600px;
+    margin: 0;
+    padding: 0;
+    border-radius: 20px;
+    width: 95vw; /* Lebar 95% Layar */
+    height: 90vh; /* Tinggi 90% Layar */
+    max-width: 1400px;
     position: relative;
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
 }
 
 .close-btn {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
+    color: #fff;
+    font-size: 32px;
     font-weight: bold;
     cursor: pointer;
     position: absolute;
-    right: 20px;
-    top: 10px;
-    z-index: 10;
+    right: 25px;
+    top: 15px;
+    z-index: 1050;
+    background: rgba(0,0,0,0.5);
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
 }
 
-.close-btn:hover,
-.close-btn:focus {
-    color: #000;
-    text-decoration: none;
+.close-btn:hover {
+    background: rgba(233, 69, 96, 0.8);
+}
+
+/* --- Layout Split Kiri-Kanan --- */
+.modal-body {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+/* Kolom Kiri: Gambar */
+.modal-left {
+    flex: 1.5; /* Proporsi lebar gambar */
+    background-color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.modal-left img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Gambar pas di layar, ganti 'cover' jika ingin full crop */
+    background: #111;
+}
+
+/* Kolom Kanan: Teks */
+.modal-right {
+    flex: 2; /* Proporsi lebar teks lebih besar */
+    padding: 50px;
+    overflow-y: auto; /* Scroll jika teks panjang */
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #fff;
+}
+
+/* Konten Slide */
+.slides-container {
+    position: relative;
+    padding-bottom: 80px; /* Ruang untuk tombol */
+}
+
+.slide {
+    display: none;
+    animation: fade 0.6s ease;
+}
+
+.slide.active {
+    display: block;
+}
+
+@keyframes fade {
+    from {opacity: 0; transform: translateY(20px);} 
+    to {opacity: 1; transform: translateY(0);}
+}
+
+/* Styling Teks di dalam Modal */
+.slide h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #222;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 15px;
+}
+
+.anime-details-list p {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    color: #555;
+    border-bottom: 1px dashed #eee;
+    padding-bottom: 10px;
+}
+
+.anime-details-list strong {
+    color: #222;
+    display: inline-block;
+    width: 120px;
+}
+
+.rating-box .score {
+    font-size: 4rem;
+    font-weight: 800;
+    color: #e94560;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.slide p {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: #444;
+    text-align: justify;
+}
+
+/* Tombol Navigasi */
+.nav-buttons {
+    position: absolute;
+    bottom: 30px;
+    right: 40px;
+    display: flex;
+    gap: 15px;
+}
+
+.prev-btn, .next-btn {
     cursor: pointer;
+    width: 50px;
+    height: 50px;
+    color: #333;
+    font-weight: bold;
+    font-size: 24px;
+    transition: 0.3s;
+    border-radius: 50%;
+    border: 2px solid #ddd;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: static; /* Reset posisi absolute lama */
+    margin: 0;
+}
+
+.prev-btn:hover, .next-btn:hover {
+    background-color: #222;
+    color: #fff;
+    border-color: #222;
+    transform: scale(1.1);
+}
+
+/* Responsif untuk HP (Layar Kecil) */
+@media (max-width: 900px) {
+    .modal-body {
+        flex-direction: column;
+    }
+    
+    .modal-left {
+        flex: 1;
+        max-height: 35vh;
+        width: 100%;
+    }
+    
+    .modal-right {
+        flex: 2;
+        padding: 25px;
+        justify-content: flex-start;
+    }
+
+    .slide h2 { font-size: 1.8rem; margin-bottom: 15px; }
+    .slide p, .anime-details-list p { font-size: 1rem; }
+    
+    .nav-buttons {
+        bottom: 15px;
+        right: 15px;
+    }
 }
