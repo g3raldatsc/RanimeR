@@ -58,7 +58,7 @@
             
             <div class="grid-item" onclick="openModal('rank4')">
                 <span class="rank-badge">#4</span>
-                <img src="assets/images/nisekoi.jpg" alt="Anime 4">
+                <img src="assets/images/nisekoi.jpg" alt="Nisekoi">
                 <div class="grid-info">
                     <h3>Nisekoi</h3>
                 </div>
@@ -66,7 +66,7 @@
             
             <div class="grid-item" onclick="openModal('rank5')">
                 <span class="rank-badge">#5</span>
-                <img src="assets/images/shigatsuu.jpg" alt="Anime 5">
+                <img src="assets/images/shigatsuu.jpg" alt="Shigatsu">
                 <div class="grid-info">
                     <h3>Shigatsu wa Kimi no Uso</h3>
                 </div>
@@ -74,23 +74,23 @@
 
             <div class="grid-item" onclick="openModal('rank6')">
                 <span class="rank-badge">#6</span>
-                <img src="assets/images/clannad.jpg" alt="Anime 6">
+                <img src="assets/images/clannad.jpg" alt="Clannad">
                 <div class="grid-info">
-                    <h3>Clannad</h3>
+                    <h3>Clannad: After Story</h3>
                 </div>
             </div>
 
             <div class="grid-item" onclick="openModal('rank7')">
                 <span class="rank-badge">#7</span>
-                <img src="assets/images/seishunn.jpg" alt="Anime 7">
+                <img src="assets/images/seishunn.jpg" alt="Bunny Girl Senpai">
                 <div class="grid-info">
-                    <h3>Seishun Buta Yarou wa Bunny Girl Senpai no Yume wo Minai</h3>
+                    <h3>Seishun Buta Yarou</h3>
                 </div>
             </div>
 
             <div class="grid-item" onclick="openModal('rank8')">
                 <span class="rank-badge">#8</span>
-                <img src="assets/images/ookami.jpg" alt="Anime 8">
+                <img src="assets/images/ookami.jpg" alt="Spice and Wolf">
                 <div class="grid-info">
                     <h3>Ookami to Koushinryou</h3>
                 </div>
@@ -98,7 +98,7 @@
 
             <div class="grid-item" onclick="openModal('rank9')">
                 <span class="rank-badge">#9</span>
-                <img src="assets/images/aonohako.jpg" alt="Anime 9">
+                <img src="assets/images/aonohako.jpg" alt="Ao no Hako">
                 <div class="grid-info">
                     <h3>Ao no Hako</h3>
                 </div>
@@ -106,68 +106,83 @@
 
             <div class="grid-item" onclick="openModal('rank10')">
                 <span class="rank-badge">#10</span>
-                <img src="assets/images/chunibyo.jpg" alt="Anime 10">
+                <img src="assets/images/chunibyo.jpg" alt="Chuunibyou">
                 <div class="grid-info">
                     <h3>Chuunibyou demo Koi ga Shitai!</h3>
                 </div>
             </div>
 
-            <div class="grid-item" onclick="openModal('rank10')">
+            <div class="grid-item" onclick="openModal('rank11')">
                 <span class="rank-badge">#11</span>
-                <img src="assets/images/gotoubun.jpg" alt="Anime 10">
+                <img src="assets/images/gotoubun.jpg" alt="Gotoubun">
                 <div class="grid-info">
                     <h3>Gotoubun no Hanayome</h3>
                 </div>
             </div>
 
-            <div class="grid-item" onclick="openModal('rank10')">
+            <div class="grid-item" onclick="openModal('rank12')">
                 <span class="rank-badge">#12</span>
-                <img src="assets/images/kaminomi.jpg" alt="Anime 10">
+                <img src="assets/images/kaminomi.jpg" alt="Kami Nomi">
                 <div class="grid-info">
                     <h3>Kami Nomi zo Shiru Sekai</h3>
                 </div>
             </div>
 
-            <div class="grid-item" onclick="openModal('rank10')">
+            <div class="grid-item" onclick="openModal('rank13')">
                 <span class="rank-badge">#13</span>
-                <img src="assets/images/datealive.jpg" alt="Anime 10">
+                <img src="assets/images/datealive.jpg" alt="Date A Live">
                 <div class="grid-info">
                     <h3>Date A Live</h3>
                 </div>
             </div>
 
-            </div>
+        </div>
     </section>
 
     <div id="animeModal" class="modal">
-        <div class="modal-content">
+        <div class="modal-content fullscreen-modal">
             <span class="close-btn" onclick="closeModal()">&times;</span>
             
-            <div class="slides-container">
-                <div class="slide active">
-                    <h2 id="modalTitle">Judul Anime</h2>
-                    <img id="modalImage" src="" alt="Anime Detail">
-                    <p><strong>Genre:</strong> Romance, Drama</p>
-                    <p><strong>Studio:</strong> Nama Studio</p>
-                    <p><strong>Episodes:</strong> 12 / 24</p>
-                </div>
-                
-                <div class="slide">
-                    <h2>Sinopsis</h2>
-                    <p>Di sini nanti berisi sinopsis cerita dari anime tersebut...</p>
+            <div class="modal-body">
+                <div class="modal-left">
+                    <img id="modalMainImage" src="" alt="Anime Big Cover">
                 </div>
 
-                <div class="slide">
-                    <h2>Review Pribadi</h2>
-                    <div class="rating-box">
-                        <span class="score">10/10</span>
+                <div class="modal-right">
+                    <div class="slides-container">
+                        
+                        <div class="slide active">
+                            <h2 id="modalTitle">Judul Anime</h2>
+                            <div class="anime-details-list">
+                                <p><strong>Genre:</strong> <span id="modalGenre">-</span></p>
+                                <p><strong>Studio:</strong> <span id="modalStudio">-</span></p>
+                                <p><strong>Episodes:</strong> <span id="modalEpisodes">-</span></p>
+                            </div>
+                            <p style="margin-top: 20px; color: #666; font-size: 0.9rem;">
+                                <em>(Klik tombol panah di bawah untuk melihat Sinopsis & Review)</em>
+                            </p>
+                        </div>
+                        
+                        <div class="slide">
+                            <h2>Sinopsis</h2>
+                            <p id="modalSynopsis">Sinopsis akan muncul di sini...</p>
+                        </div>
+
+                        <div class="slide">
+                            <h2>Review Pribadi</h2>
+                            <div class="rating-box">
+                                <span class="score" id="modalRating">10/10</span>
+                            </div>
+                            <p id="modalReview">Review akan muncul di sini...</p>
+                        </div>
                     </div>
-                    <p>Di sini berisi alasan kenapa kamu memberikan rating sangat bagus...</p>
+
+                    <div class="nav-buttons">
+                        <button class="prev-btn" onclick="changeSlide(-1)">&#10094;</button>
+                        <button class="next-btn" onclick="changeSlide(1)">&#10095;</button>
+                    </div>
                 </div>
             </div>
-
-            <button class="prev-btn" onclick="changeSlide(-1)">&#10094;</button>
-            <button class="next-btn" onclick="changeSlide(1)">&#10095;</button>
         </div>
     </div>
 
